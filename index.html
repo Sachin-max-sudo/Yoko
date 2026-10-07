@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jarvis – AI agent system for freelance developers</title>
+<meta name="description" content="Jarvis is an open-source AI agent system that automates the freelance pipeline: briefs, design, code, deploy and delivery, using Claude API.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* ====== EDIT THESE: colours ====== */
+  :root{
+    --paper:#EEF1F4;
+    --ink:#14213D;
+    --blue:#2F5BFF;
+    --sun:#FFD23F;
+    --mute:#4B5873;
+    --line:#C9D1DD;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font:400 18px/1.6 "IBM Plex Sans",system-ui,sans-serif}
+  h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.05;letter-spacing:-0.02em}
+  a{color:inherit}
+  :focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+  nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+  nav b{font:800 22px "Bricolage Grotesque",sans-serif}
+  nav a{text-decoration:none;font-weight:500}
+
+  .hero{padding:56px 0 72px}
+  .hero h1{font-size:clamp(40px,8vw,84px);font-weight:800;max-width:14ch}
+  .hero p{max-width:52ch;margin:24px 0 32px;color:var(--mute);font-size:20px}
+  .btn{display:inline-block;background:var(--ink);color:#fff;padding:14px 26px;border-radius:999px;text-decoration:none;font-weight:500}
+  .btn:hover{background:var(--blue)}
+  .btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--ink);margin-left:8px}
+  .btn.ghost:hover{background:var(--ink);color:#fff}
+
+  /* pipeline track: the one memorable element */
+  .track{margin-top:64px;position:relative;padding-top:30px}
+  .track ol{list-style:none;display:grid;grid-template-columns:repeat(6,1fr);gap:8px;position:relative}
+  .track ol::before{content:"";position:absolute;top:-14px;left:0;right:0;height:4px;background:var(--line);border-radius:4px}
+  .dot{position:absolute;top:-22px;left:0;width:20px;height:20px;border-radius:50%;background:var(--sun);border:3px solid var(--ink);animation:run 7s ease-in-out 1 forwards}
+  @keyframes run{to{left:calc(100% - 20px)}}
+  .track li{font:600 15px "Bricolage Grotesque",sans-serif}
+  .track li span{display:block;font:400 14px "IBM Plex Sans",sans-serif;color:var(--mute);margin-top:2px}
+
+  section{padding:72px 0;border-top:2px solid var(--ink)}
+  section h2{font-size:clamp(30px,5vw,48px);margin-bottom:32px;max-width:18ch}
+  .steps{display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+  .steps h3{font-size:24px;margin-bottom:8px}
+  .steps p{color:var(--mute)}
+  .steps div{border-left:4px solid var(--blue);padding-left:18px}
+  .two{display:grid;gap:40px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+  .two p{max-width:46ch}
+  code{background:#fff;border:1px solid var(--line);padding:2px 8px;border-radius:6px;font-size:.9em}
+
+  footer{padding:40px 0 56px;border-top:2px solid var(--ink);color:var(--mute);font-size:15px}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+
+  @media (max-width:700px){
+    .track ol{grid-template-columns:1fr 1fr;row-gap:20px}
+    .dot{display:none}
+    .btn.ghost{margin:12px 0 0}
+  }
+  @media (prefers-reduced-motion:reduce){.dot{animation:none;left:calc(100% - 20px)}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav>
+    <b>Jarvis</b>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header class="hero">
+    <h1>One AI agent system for the whole freelance job.</h1>
+    <p>Jarvis takes a client brief and handles the repeat work: planning, design, code, deployment and delivery. Built on the Claude API, kept low-cost, and open source.</p>
+    <a class="btn" href="https://github.com/Sachin-max-sudo/Yoko">View on GitHub</a>
+    <a class="btn ghost" href="#contact">Get in touch</a>
+
+    <div class="track" aria-label="Jarvis pipeline from brief to invoice">
+      <div class="dot" aria-hidden="true"></div>
+      <ol>
+        <li>Brief<span>Read the client request</span></li>
+        <li>Plan<span>Scope and tasks</span></li>
+        <li>Design<span>Layout and style</span></li>
+        <li>Code<span>Build the site or app</span></li>
+        <li>Deploy<span>Push live</span></li>
+        <li>Deliver<span>Handoff to client</span></li>
+      </ol>
+    </div>
+  </header>
+</div>
+
+<section id="how">
+  <div class="wrap">
+    <h2>What it does</h2>
+    <div class="steps">
+      <div>
+        <h3>Understands the brief</h3>
+        <p>Turns a short client message into a clear scope, task list and timeline.</p>
+      </div>
+      <div>
+        <h3>Builds and ships</h3>
+        <p>Generates the design and code for websites and apps, then deploys them to hosting.</p>
+      </div>
+      <div>
+        <h3>Keeps costs low</h3>
+        <p>Uses the Claude API only where it is needed, so a solo developer can afford to run it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap two">
+    <div>
+      <h2>Who it is for</h2>
+    </div>
+    <div>
+      <p>Freelance developers and small studios who want to spend their time on hard problems, not on repeating the same setup for every client.</p>
+      <p style="margin-top:16px">Jarvis is an early-stage developer tool. It is being built in the open, and feedback is welcome.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap two">
+    <div>
+      <h2>Talk to the maker</h2>
+    </div>
+    <div>
+      <p>Questions, ideas or want to try it? Write to <a href="mailto:satlok@spiritualknowledge.in"><code>satlok@spiritualknowledge.in</code></a>.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Jarvis. Built by Sachin.</span>
+    <span>Powered by the Claude API</span>
+  </div>
+</footer>
+
+</body>
+</html>
