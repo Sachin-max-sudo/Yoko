@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+    <key>CFBundleIdentifier</key><string>ai.yoko.desktop</string>
+    <key>CFBundleName</key><string>Yoko</string>
+    <key>CFBundleDisplayName</key><string>Yoko</string>
+    <key>CFBundleExecutable</key><string>Yoko</string>
+    <key>CFBundlePackageType</key><string>APPL</string>
+    <key>CFBundleShortVersionString</key><string>0.3.1</string>
+    <key>CFBundleVersion</key><string>5</string>
+    <key>LSMinimumSystemVersion</key><string>14.0</string>
+    <key>LSUIElement</key><true/>
+    <key>NSHighResolutionCapable</key><true/>
+    <key>NSMicrophoneUsageDescription</key><string>Yoko listens only when you start voice input or conversation mode.</string>
+    <key>NSSpeechRecognitionUsageDescription</key><string>Yoko transcribes your voice requests. Apple recognition may use Apple servers when local recognition is unavailable.</string>
+    <key>NSScreenCaptureUsageDescription</key><string>Yoko captures your screen only when requested or approved, for local OCR.</string>
+    <key>NSAppleEventsUsageDescription</key><string>Yoko uses approved automation to control applications and system settings.</string>
+</dict></plist>
